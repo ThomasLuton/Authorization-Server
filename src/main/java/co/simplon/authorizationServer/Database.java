@@ -1,4 +1,4 @@
-package co.simplon.autorizationServer;
+package co.simplon.authorizationServer;
 
 import java.util.ArrayList;
 
