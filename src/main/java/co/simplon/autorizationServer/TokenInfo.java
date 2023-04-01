@@ -1,11 +1,11 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
-import java.util.Arrays;
+import java.util.List;
 
 public class TokenInfo {
 
     private String token;
-    private String[] roles;
+    private List<String> roles;
 
     public TokenInfo() {
 	super();
@@ -20,18 +20,17 @@ public class TokenInfo {
 	this.token = token;
     }
 
-    public String[] getRoles() {
+    public List<String> getRoles() {
 	return roles;
     }
 
-    public void setRoles(String[] roles) {
+    public void setRoles(List<String> roles) {
 	this.roles = roles;
     }
 
     @Override
     public String toString() {
-	return "{token=" + token + ", roles="
-		+ Arrays.toString(roles) + "}";
+	return "{token=" + token + ", roles=" + roles + "}";
     }
 
 }

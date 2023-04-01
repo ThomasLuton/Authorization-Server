@@ -1,16 +1,19 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthenticationService {
+public class AutorizationService {
 
     // LIVE CODING
 
     private AuthHelper authHelper;
 
-    public AuthenticationService(AuthHelper authHelper) {
+    public AutorizationService(AuthHelper authHelper) {
 	this.authHelper = authHelper;
     }
 
@@ -22,7 +25,8 @@ public class AuthenticationService {
 	String hashPassword = authHelper.encode(password);
 	account.setPassword(hashPassword);
 
-	String[] roles = { "USER" };
+	List<String> roles = new ArrayList<>();
+	roles.add("USER");
 	account.setRoles(roles);
 
 	Database.save(account);
@@ -41,7 +45,7 @@ public class AuthenticationService {
 		    hash);
 
 	    if (match) {
-		String[] roles = user.getRoles();
+		List<String> roles = user.getRoles();
 		TokenInfo tokenInfo = new TokenInfo();
 		String token = authHelper.createJWT(roles,
 			user.getIdentifier());

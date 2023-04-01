@@ -1,4 +1,4 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
 import java.util.ArrayList;
 

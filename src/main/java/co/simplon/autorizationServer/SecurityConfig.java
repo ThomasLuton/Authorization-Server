@@ -1,4 +1,4 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +27,9 @@ public class SecurityConfig {
 	Algorithm algorithm = Algorithm.HMAC256(secret);
 	PasswordEncoder encoder = new BCryptPasswordEncoder(
 		rounds);
-	return new AuthHelper(issuer, tokenExpiration,
-		algorithm, encoder);
+	return new AuthHelper.Builder().issuer(issuer)
+		.expiration(tokenExpiration)
+		.algorithm(algorithm)
+		.passwordEncoder(encoder).build();
     }
 }

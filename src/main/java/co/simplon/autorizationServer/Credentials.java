@@ -1,14 +1,11 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
-import java.util.Arrays;
-
-public class Account {
+public class Credentials {
 
     private String identifier;
     private String password;
-    private String[] roles;
 
-    public Account() {
+    public Credentials() {
 	super();
 	// TODO Auto-generated constructor stub
     }
@@ -29,19 +26,10 @@ public class Account {
 	this.password = password;
     }
 
-    public String[] getRoles() {
-	return roles;
-    }
-
-    public void setRoles(String[] roles) {
-	this.roles = roles;
-    }
-
     @Override
     public String toString() {
-	return "{identifier=" + identifier + ", password="
-		+ password + ", roles="
-		+ Arrays.toString(roles) + "}";
+	return "{identifier=" + identifier
+		+ ", password={protected}";
     }
 
 }

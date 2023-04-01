@@ -1,4 +1,4 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ public class Controller {
     // Live Coding
 
     @Autowired
-    private AuthenticationService service;
+    private AutorizationService service;
 
     @PostMapping("/sign-up")
     @ResponseStatus(HttpStatus.NO_CONTENT)

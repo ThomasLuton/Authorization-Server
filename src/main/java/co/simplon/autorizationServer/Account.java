@@ -1,11 +1,14 @@
-package co.simplon.authServerITSchool;
+package co.simplon.autorizationServer;
 
-public class Credentials {
+import java.util.List;
+
+public class Account {
 
     private String identifier;
     private String password;
+    private List<String> roles;
 
-    public Credentials() {
+    public Account() {
 	super();
 	// TODO Auto-generated constructor stub
     }
@@ -26,10 +29,18 @@ public class Credentials {
 	this.password = password;
     }
 
+    public List<String> getRoles() {
+	return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+	this.roles = roles;
+    }
+
     @Override
     public String toString() {
-	return "{identifier=" + identifier
-		+ ", password={protected}";
+	return "{identifier=" + identifier + ", password="
+		+ password + ", roles=" + roles + "}";
     }
 
 }
