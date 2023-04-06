@@ -1,17 +1,9 @@
 package co.simplon.authorizationServer;
 
-import org.springframework.stereotype.Service;
+public interface AuthService {
 
-@Service
-public class AuthService {
+    public void signUp(Credentials inputs);
 
-    // LIVE CODING
-    public void signUp(Credentials inputs) {
-
-    }
-
-    public TokenInfo signIn(Credentials inputs) {
-	return null;
-    }
+    public TokenInfo signIn(Credentials inputs);
 
 }

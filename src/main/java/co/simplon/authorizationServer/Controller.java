@@ -12,7 +12,10 @@ public class Controller {
 
     /*
      * Autowired permet de faire de l'injection de dépendance. Il a le même effet
-     * que l'injection via constructeur
+     * que l'injection via constructeur. Car autowired injecte depuis le champ, il
+     * est impossible de déclarer un champ final sans lui affecter de valeur. Bonne
+     * pratique déclarer les injections de dépendances par constructeur et les
+     * rendre final (évite les réaffectations accidentelles)
      */
     @Autowired
     private AuthService service;
