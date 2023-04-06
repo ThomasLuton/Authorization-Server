@@ -8,19 +8,29 @@ import com.auth0.jwt.algorithms.Algorithm;
 
 public class AuthHelper {
 
-    // LIVE CODING
-    // field => issuer, expiration, algo, encoder
-    // constructor with builder
-    // method => encode, matches, createJWT
+    private final String issuer;
+    private final long expiration;
+    private final Algorithm algorithm;
+    private final PasswordEncoder encoder;
 
-    public String[] toStringArray(List<String> list) {
-	String[] result = new String[list.size()];
+    public AuthHelper(Builder builder) {
+	this.issuer = builder.issuer;
+	this.algorithm = builder.algorithm;
+	this.encoder = builder.passwordEncoder;
+	this.expiration = builder.expiration;
+    }
 
-	for (int i = 0; i < list.size(); i++) {
-	    result[i] = list.get(i);
-	}
+    public String encode(String password) {
+	return null;
+    }
 
-	return result;
+    public Boolean matches(String candidate, String hash) {
+	return null;
+    }
+
+    public String createJWT(List<String> roles,
+	    String name) {
+	return null;
     }
 
     public static class Builder {

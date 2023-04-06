@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class Controller {
 
-    // Live Coding
-
+    /*
+     * Autowired permet de faire de l'injection de dépendance. Il a le même effet
+     * que l'injection via constructeur
+     */
     @Autowired
     private AuthService service;
 
