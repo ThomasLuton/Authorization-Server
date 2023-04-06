@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class SecurityConfig {
 
-    // LIVE CODING POUR TOUTE CETTE CLASSE
+    // LIVE CODING @Bean for provide AuthHelper
+    // + liens avec @Value
 
     @Value("${itschool.auth.rounds}")
     private int rounds;
@@ -16,4 +17,5 @@ public class SecurityConfig {
     private String secret;
     @Value("${itschool.auth.tokenExpiration}")
     private long tokenExpiration;
+
 }

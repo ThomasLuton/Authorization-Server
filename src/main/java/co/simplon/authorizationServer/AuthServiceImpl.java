@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthServiceImpl implements AuthService {
 
-    // LIVE CODING
+    // Implementation sign Up, sign in
     @Override
     public void signUp(Credentials inputs) {
 
