@@ -6,13 +6,6 @@ import org.springframework.stereotype.Service;
 public class AuthService {
 
     // LIVE CODING
-
-    private AuthHelper authHelper;
-
-    public AuthService(AuthHelper authHelper) {
-	this.authHelper = authHelper;
-    }
-
     public void signUp(Credentials inputs) {
 
     }
