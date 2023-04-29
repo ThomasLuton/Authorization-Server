@@ -1,9 +1,11 @@
 package co.simplon.authorizationServer;
 
+import java.time.Instant;
 import java.util.List;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 
 public class AuthHelper {
@@ -21,16 +23,26 @@ public class AuthHelper {
     }
 
     public String encode(String password) {
-	return null;
+	return encoder.encode(password);
     }
 
     public Boolean matches(String candidate, String hash) {
-	return null;
+	return encoder.matches(candidate, hash);
     }
 
     public String createJWT(List<String> roles,
 	    String name) {
-	return null;
+	Instant now = Instant.now();
+	Instant expirationTime = now
+		.plusSeconds(expiration);
+	String[] rolesAsArray = roles
+		.toArray(new String[roles.size()]);
+	// = (String[]) roles.toArray()
+	return JWT.create().withIssuer(issuer)
+		.withSubject(name).withIssuedAt(now)
+		.withExpiresAt(expirationTime)
+		.withArrayClaim("roles", rolesAsArray)
+		.sign(algorithm);
     }
 
     public static class Builder {
