@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
 public class AuthorizationServer {
 
     public static void main(String[] args) {
-	SpringApplication.run(
-		AuthorizationServer.class,
+
+	SpringApplication.run(AuthorizationServer.class,
 		args);
     }
 

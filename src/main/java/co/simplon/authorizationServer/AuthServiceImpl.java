@@ -26,7 +26,22 @@ public class AuthServiceImpl implements AuthService {
 	account.setPassword(hashPassword);
 
 	List<String> roles = new ArrayList<String>();
-	roles.add("ROLE_ADMIN");
+	/*
+	 * Attention, pour le bien de l'exercice le rôle est attribué grâce à
+	 * l'identifier. Evidemment c'est une mauvaise pratique, Il est préférable
+	 * d'avoir un rôle attribué par défaut et de donner la possibilité de le
+	 * modifier pour un utilisateur ayant un rôle adapté.
+	 */
+	if (inputs.getIdentifier()
+		.equalsIgnoreCase("admin")) {
+	    roles.add("ROLE_ADMIN");
+	} else if (inputs.getIdentifier()
+		.equalsIgnoreCase("both")) {
+	    roles.add("ROLE_ADMIN");
+	    roles.add("ROLE_USER");
+	} else {
+	    roles.add("ROLE_USER");
+	}
 	account.setRoles(roles);
 
 	Database.save(account);
